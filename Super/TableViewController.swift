@@ -12,6 +12,7 @@ class TableViewController: UITableViewController {
 
     var array: [PFObject] = []
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +34,27 @@ class TableViewController: UITableViewController {
             }
         }
         
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl!)
+        
+    }
+    
+    func refresh(sender:AnyObject)
+    {
+        let query = PFQuery(className: "TestObject")
+        query.findObjectsInBackgroundWithBlock {
+            (objects, error) -> Void in
+            if (error == nil) {
+                self.array=objects!
+                print(self.array)
+                self.refreshControl!.endRefreshing()
+                self.tableView.reloadData()
+            }else {
+                print(error?.userInfo)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,10 +81,40 @@ class TableViewController: UITableViewController {
         
         let foo = array[indexPath.row].valueForKey("foo") as! String?
         cell.textLabel?.text = foo
-
+        
+        let available = array[indexPath.row].valueForKey("available") as! Bool?
+        
+        if let available_ = available {
+            
+            if available_ {
+                cell.backgroundColor = UIColor.greenColor()
+            } else {
+                cell.backgroundColor = UIColor.yellowColor()
+            }
+            
+        }
+        
         return cell
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        let item = array[indexPath.row]
+        let available = item.valueForKey("available") as! Bool?
+        var newStatus = true
+        if let available_ = available {
+            if available_ {
+                newStatus = false
+            } else {
+                newStatus = true
+            }
+        }
+        item["available"] = newStatus
+        item.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            print("Object has been updated.")
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
