@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D6DC847F9CA3AC4F95399EE /* libPods-Super.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 551275C97997259573E438F2 /* libPods-Super.a */; };
 		C1FB2C6A1BFD50960091A0CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB2C691BFD50960091A0CC /* AppDelegate.swift */; };
 		C1FB2C6C1BFD50960091A0CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB2C6B1BFD50960091A0CC /* ViewController.swift */; };
 		C1FB2C6F1BFD50960091A0CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FB2C6D1BFD50960091A0CC /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		551275C97997259573E438F2 /* libPods-Super.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Super.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E013516C81DDA9691B57BE1 /* Pods-Super.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Super.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Super/Pods-Super.debug.xcconfig"; sourceTree = "<group>"; };
+		C14344B41BFD59870075FFF9 /* Super-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Super-Bridging-Header.h"; sourceTree = "<group>"; };
 		C1FB2C661BFD50960091A0CC /* Super.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Super.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1FB2C691BFD50960091A0CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1FB2C6B1BFD50960091A0CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,7 @@
 		C1FB2C701BFD50960091A0CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1FB2C731BFD50960091A0CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1FB2C751BFD50960091A0CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC60F97BADDB27FD933CD594 /* Pods-Super.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Super.release.xcconfig"; path = "Pods/Target Support Files/Pods-Super/Pods-Super.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +34,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D6DC847F9CA3AC4F95399EE /* libPods-Super.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E48D50CA9860C2D02DFDF67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				551275C97997259573E438F2 /* libPods-Super.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A708CD094F8E7D0EF56A4057 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E013516C81DDA9691B57BE1 /* Pods-Super.debug.xcconfig */,
+				FC60F97BADDB27FD933CD594 /* Pods-Super.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C1FB2C5D1BFD50960091A0CC = {
 			isa = PBXGroup;
 			children = (
 				C1FB2C681BFD50960091A0CC /* Super */,
 				C1FB2C671BFD50960091A0CC /* Products */,
+				A708CD094F8E7D0EF56A4057 /* Pods */,
+				8E48D50CA9860C2D02DFDF67 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +85,7 @@
 				C1FB2C701BFD50960091A0CC /* Assets.xcassets */,
 				C1FB2C721BFD50960091A0CC /* LaunchScreen.storyboard */,
 				C1FB2C751BFD50960091A0CC /* Info.plist */,
+				C14344B41BFD59870075FFF9 /* Super-Bridging-Header.h */,
 			);
 			path = Super;
 			sourceTree = "<group>";
@@ -71,9 +97,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1FB2C781BFD50960091A0CC /* Build configuration list for PBXNativeTarget "Super" */;
 			buildPhases = (
+				FA9D476CA4C739C651619709 /* Check Pods Manifest.lock */,
 				C1FB2C621BFD50960091A0CC /* Sources */,
 				C1FB2C631BFD50960091A0CC /* Frameworks */,
 				C1FB2C641BFD50960091A0CC /* Resources */,
+				41C25B5FD42EE1425E9A091C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +157,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41C25B5FD42EE1425E9A091C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Super/Pods-Super-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA9D476CA4C739C651619709 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C1FB2C621BFD50960091A0CC /* Sources */ = {
@@ -245,23 +306,30 @@
 		};
 		C1FB2C791BFD50960091A0CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E013516C81DDA9691B57BE1 /* Pods-Super.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Super/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nycda.Super;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Super/Super-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		C1FB2C7A1BFD50960091A0CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC60F97BADDB27FD933CD594 /* Pods-Super.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Super/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nycda.Super;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Super/Super-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -284,6 +352,7 @@
 				C1FB2C7A1BFD50960091A0CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
